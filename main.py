@@ -65,10 +65,9 @@ def diagnosticar():
     # =======================
     # REGLA 6
     # =======================
-    no_imprime = preguntar("¿Puedes imprimir en la impresora de red?")
-    if no_imprime:
-        internet_ok = acceso_internet
-        if internet_ok:
+    puede_imprimir = preguntar("¿Puedes imprimir en la impresora de red?")
+    if not puede_imprimir:
+        if acceso_internet:
             print("➡ R6 activada:")
             print("Diagnóstico: Error en la impresora de red (IP cambiada o servicio detenido).")
             return
